@@ -40,7 +40,7 @@ function Navbar() {
         />
 
         <div className="group relative">
-          <Link to='/login'>
+          <Link to="/login">
             <img
               className="w-5 cursor-pointer"
               src={assets.profile_icon}
@@ -72,9 +72,9 @@ function Navbar() {
 
       {/* Sidebar menu for small screen */}
       <div
-        className={`absolute top-0 righ-0 bottom-0 overflow-hidden bg-white transition-all ${
-          isVisible ? "w-full" : "w-0"
-        }`}
+        className={`fixed top-0 right-0 bottom-0 bg-white z-50 transition-all duration-300 ${
+          isVisible ? "w-3/4" : "w-0"
+        } overflow-hidden`}
       >
         <div className="flex flex-col text-gray-600">
           <div
