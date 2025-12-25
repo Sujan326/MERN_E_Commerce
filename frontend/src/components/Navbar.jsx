@@ -5,7 +5,7 @@ import { useState } from "react";
 function Navbar() {
   const [isVisible, setIsVisible] = useState(false);
   return (
-    <div className="flex items-center justify-between py-5 font-medium">
+    <div className="flex items-center justify-between py-5 font-medium sticky top-0 left-0 right-0 bg-white z-50 border-b border-gray-200">
       <Link to="/">
         <img className="w-36" src={assets.logo} alt="logo" />
       </Link>
