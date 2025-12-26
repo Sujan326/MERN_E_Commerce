@@ -3,6 +3,7 @@ import cors from "cors";
 import "dotenv/config";
 import connectDB from "./config/dbConfig.js";
 import connectCloudinary from "./config/cloudinary.js";
+import userRouter from "./routes/user.routes.js";
 
 // App Config
 const app = express();
@@ -15,6 +16,9 @@ app.use(express.json()); // Request parsed in json format
 app.use(cors()); // access backend from any IP
 
 // Endpoints
+app.use('/api/user', userRouter); // http://localhost:3000/api/user/register
+
+
 app.get("/", (req, res) => {
   res.send("API RUNNING...");
 });
