@@ -5,3 +5,9 @@ FRONTEND:
 2. [GOOGLE-FONTS](https://fonts.google.com/)
 
 3. [REACT-TOASTIFY](https://www.npmjs.com/package/react-toastify)
+
+BACKEND:
+
+1. [DATABASE](https://cloud.mongodb.com/)
+
+2. [CLOUDINARY]()
