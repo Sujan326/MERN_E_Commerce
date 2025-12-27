@@ -3,7 +3,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { UserModel } from "../models/user.models.js";
 
-// Generate Token
+// Generate Token for user
 const createToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET);
 };
@@ -81,6 +81,24 @@ const registerUser = async (req, res) => {
 };
 
 // API for admin login
-const loginAdmin = async (req, res) => {};
+const loginAdmin = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    // generate adminToken, if credentials are correct
+    if (
+      email === process.env.ADMIN_EMAIL &&
+      password === process.env.ADMIN_PASSWORD
+    ) {
+      const adminToken = jwt.sign({email , password}, process.env.JWT_SECRET);
+      res.json({ success: true, adminToken });
+    } else {
+      res.json({ success: false, message: "Invalid Credentials" });
+    }
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: error.message });
+  }
+};
 
 export { loginUser, registerUser, loginAdmin };
